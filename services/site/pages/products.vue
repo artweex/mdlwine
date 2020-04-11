@@ -10,8 +10,16 @@ export default {
 	name: 'products'
 	components:
 		"product-card": ProductCard
-
+		
+	asyncData: ({ params, $axios, error, store }) ->
+		return $axios.get("/api/products").then (res) =>
+			return { products: res.data }
+		.catch (err) =>
+			return error({ statusCode: 404, message: 'Post not found' })
+		
+   ###
 	data: ->
+
 		return {
 			
 			products: [
@@ -82,8 +90,11 @@ export default {
 				}
 				
 			]
+			
 		}
+	###	
 }
+
 </script>
 
 <style lang="scss" scoped>
