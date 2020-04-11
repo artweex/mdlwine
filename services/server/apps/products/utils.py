@@ -10,3 +10,4 @@ def create_slug(sender, instance, new_slug = None):
     qid = qsitem.id if qsitem else uuid.uuid4().hex[:6]
     _new_slug = f"{slug}-{qid}"
     return create_slug(sender = sender, instance = instance, new_slug = _new_slug)
+    

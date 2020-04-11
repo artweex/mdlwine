@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'apps.products',
+    'apps.products'
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(
+            os.path.dirname(os.path.dirname(BASE_DIR)),
+            'storage',
+            'db',
+            'db.sqlite3'
+        ),
     }
 }
 
@@ -120,3 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), "storage", "static")
+
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "assets"), ]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), "storage", "media")
