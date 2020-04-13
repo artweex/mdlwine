@@ -17,7 +17,26 @@
 							>
 						</v-img>
 					</v-card>
-					<v-card-subtitle >Details: {{ item.details }} </v-card-subtitle>
+					<v-card-subtitle class="pa-1 pt-5"
+					>
+						<v-icon>mdi-fruit-grapes-outline</v-icon>
+						{{ item.details.split(/\r\n/)[0] }}
+					</v-card-subtitle>
+					<v-card-subtitle class="pa-1"
+					>
+						<v-icon>mdi-glass-wine</v-icon>
+						{{ item.details.split(/\r\n/)[1] }}
+					</v-card-subtitle>
+					<v-card-subtitle class="pa-1"
+					>
+						<v-icon>mdi-flask-outline</v-icon>
+						{{ item.details.split(/\r\n/)[2] }}
+					</v-card-subtitle>
+					<v-card-subtitle class="pa-1"
+					>
+						<v-icon>mdi-toggle-switch</v-icon>
+						{{ item.details.split(/\r\n/)[3] }}
+					</v-card-subtitle>
 					<v-card-text >Description: {{ item.description }}
 					</v-card-text>
 				</v-col>
@@ -29,15 +48,19 @@
 <script lang="coffee">
 
 export default {
-	name: '_slug'
-
+	name: 'slug'
+	
 
 	asyncData: ({ params, $axios, error, store }) ->
 		return $axios.get("/api/products/#{params.slug}").then (res) =>
 			return { item: res.data }
 		.catch (err) =>
 			return error({ statusCode: 404, message: 'Post not found' })
-
+	
+	
+		
+	
+		
 };
 
 </script>

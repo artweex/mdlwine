@@ -32,25 +32,38 @@
 			v-if="isIntersecting"
 			class="articles"
 		>
-			<!-- v-intersect="onIntersect"
-		> -->
+			
 			<v-card
-				v-for="n in 10" :key="n"
-				class="mx-auto elevation-1"
-				max-width="344"
+				class="mx-auto"
+				max-width="500"
 			>
 				<v-img
-					src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-					height="150px"
-				></v-img>
+				class="white--text align-end"
+				height="300px"
+				src="/images/havuz.jpg"
+				>
+				
+				</v-img>
 
-				<v-card-title>
-				Top western road trips
-				</v-card-title>
+				<v-card-title class="pb-0">GP Combine of Fine Wines "Milestii Mici"</v-card-title>
 
-				<v-card-subtitle>
-				1,000 miles of wonder
-				</v-card-subtitle>
+				<v-card-text class="text--primary">
+					<div>
+						The Republic of Moldova is not in vain called the "Country where the doors to the wine paradise are open." 
+						After all, wine production is the main occupation of the inhabitants of the republic.
+						Products of the Quality Wines Combine “Milestii. Mich.” long known, recognized and loved far beyond the borders of Moldova.
+						The quality wine factory Milestii Mici is the oldest repository of this “sacred drink”.
+					    Any guest is interested in visiting this unique place, the doors of which are open for everyone.
+					</div>
+				</v-card-text>
+				<v-card-actions>
+				<v-btn
+					color="orange"
+					text
+				>
+					detailed
+				</v-btn>
+				</v-card-actions>
 			</v-card>
 		</section>
 	</div>
